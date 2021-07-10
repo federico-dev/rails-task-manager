@@ -1,5 +1,14 @@
-<h2><%= @tasks.title %></h2>
-<p><%= @tasks.details %></p>
-<p><%= @tasks.completed %></p>
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<p><%= @task.completed %></p>
 
-<h3>Add a new task</h3>
+<h3> 
+  <%= link_to "Edit Task", edit_task_path(@task.id) %>
+</h3>
+
+<h3>
+  <%= link_to "Delete #{@task.title}",
+            destroy_task_path(@task.id),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+</h3>
